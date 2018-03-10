@@ -1,4 +1,4 @@
-# Dash_Translation_into_Japanese
+# Translate English tutorial into Japanese one
 
 I am working on Translation English Dash tutorial into Japanese. 
 This repository will be aborted when permitted as an official article.
