@@ -12,4 +12,4 @@ Feel free to contact me here!
 
 # Reference
 
-[Original Documents](https://github.com/ksnt/dash-docs)
+[Original Documents](https://github.com/plotly/dash-docs)
