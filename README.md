@@ -7,6 +7,8 @@ This repository will be aborted when marged into official documents. This reposi
 
 [Can I translate English tutorial into Japanese one?](https://community.plot.ly/t/can-i-translate-english-tutorial-into-japanese-one/8859?u=ksnt)
 
+Any collaborators are welcome!  
+Feel free to contact me here!  
 
 # Reference
 
