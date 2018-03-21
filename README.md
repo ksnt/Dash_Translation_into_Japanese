@@ -3,7 +3,7 @@
 Dashの英語チュートリアルを日本語に翻訳するプロジェクトです．  
 このリポジトリは公式ドキュメントにマージされることにより破棄される可能性があります．当面は一時的なリポジトリとなります．  
 
-📢このリポジトリが何なのか知りたい方は以下のリンクでの会話を読んでみてください！
+📢このリポジトリに関する議論は以下のリンク先で行われています！
 
 [英語チュートリアルを日本語に翻訳してもいいかな？](https://community.plot.ly/t/can-i-translate-english-tutorial-into-japanese-one/8859?u=ksnt)
 
@@ -20,7 +20,7 @@ Dashの英語チュートリアルを日本語に翻訳するプロジェクト�
 I am working on translation English Dash tutorial into Japanese one. 
 This repository will be aborted when marged into official documents. This repository is temporary.    
 
-📢 Please see the link below if you want to know what this repository is!  
+📢 Please see the link below if you want to see discussion on this repository!  
 
 [Can I translate English tutorial into Japanese one?](https://community.plot.ly/t/can-i-translate-english-tutorial-into-japanese-one/8859?u=ksnt)
 
@@ -30,4 +30,3 @@ Feel free to contact me here!
 # Reference
 
 [Original Documents](https://github.com/plotly/dash-docs)
-
