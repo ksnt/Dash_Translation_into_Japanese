@@ -412,4 +412,4 @@ Dashアプリケーションのlayoutはアプリケーションの見え方を�
 
 次のパートではこうしたアプリケーションをどのようにして対話的にするのかということについて述べたいと思います。
 
-[Dash Tutorial - Part 2: Basic Callbacks]()
+[Dash Tutorial - Part 2: Basic Callbacks](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap2.md)
