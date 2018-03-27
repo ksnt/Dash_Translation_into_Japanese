@@ -27,7 +27,7 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 
 ## [第4部 状態(State)を持ったコールバック](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap3.md)
 
-基本的なコールバックは値が変化したときにいつも呼びだされます。インプットが変わったときはつねに特別な値を反映させるためにDash StateをDash Inputsと一緒に使ってください。  
+基本的なコールバックは値が変化したときにいつも呼びだされます。インプットが変わったときにはいつも追加の値を反映させるためにDash StateをDash Inputsと一緒に使ってください。  
 
 
 ## [第5部 対話的なグラフ作成とクロスフィルタリング](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap4.md)
