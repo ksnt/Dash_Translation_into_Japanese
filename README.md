@@ -12,7 +12,7 @@ Dashの英語チュートリアルを日本語に翻訳するプロジェクト�
 
 # Dashチュートリアル  
 
-## 第1部 インストール
+## [第1部 インストール](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap0.md)
 
 ## [第2部 Dash レイアウト](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap1.md)
 
