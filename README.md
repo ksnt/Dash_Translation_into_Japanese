@@ -14,7 +14,7 @@ Dashの英語チュートリアルを日本語に翻訳するプロジェクト�
 
 ## 第1部 インストール
 
-## 第2部 Dashレイアウト(Dash `Layout`)
+## [第2部 Dash レイアウト](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap1.md)
 
 Dashは`layout`を使ってあなたのアプリケーションの見え方を指定します。これは、一連の宣言的なDashコンポーネントによって構成されています。
 
