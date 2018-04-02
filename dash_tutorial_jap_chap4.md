@@ -1,6 +1,15 @@
 # 対話的な可視化
 
-**(TBA)**
+The dash_core_components library includes a component called Graph.  
+
+Graph renders interactive data visualizations using the open source plotly.js JavaScript graphing library. Plotly.js supports over 35 chart types and renders charts in both vector-quality SVG and high-performance WebGL.  
+
+The figure argument in the dash_core_components.Graph component is the same figure argument that is used by plotly.py, Plotly's open source Python graphing library. Check out the plotly.py documentation and gallery to learn more.  
+
+Dash components are described declaratively by a set of attributes. All of these attributes can be updated by callback functions but only a subset of these attributes are updated through user interaction. For example, when you click on an option in a dcc.Dropdown component, the value property of that component changes.  
+
+The dcc.Graph component has four attributes that can change through user-interaction: hoverData, clickData, selectedData, relayoutData. These properties update when you hover over points, click on points, or select regions of points in a graph.
+Here's an simple example that prints these attributes in the screen.   
 
 ```python
 import json
@@ -129,7 +138,7 @@ if __name__ == '__main__':
 
 ## ホバー中のグラフのアップデート
 
-**(TBA)**
+Let's update our world indicators example from the previous chapter by updating time series when we hover over points in our scatter plot. 
 
 ```python
 import dash
@@ -304,8 +313,7 @@ Try mousing over the points in the scatter plot on the left. Notice how the line
 
 ## Generic Crossfilter Recipe
 
-**(TBA)**
-
+Here's a slightly more generic example for crossfiltering across a six column data set. Each scatter plot's selection filters the underlying dataset.  
 ```python
 import dash
 from dash.dependencies import Input, Output
@@ -466,13 +474,20 @@ if __name__ == '__main__':
 
 ![](./newplot3_chap4.png) 
 
+Try clicking and dragging in any of the plots to filter different regions. On every selection, the three graph callbacks are fired with the latest selected regions of each plot. A pandas dataframe is filtered based off of the selected points and the graphs are replotted with the selected points highlighted and the selected region drawn as a dashed rectangle.
 
-**(TBA)**
-
+> As an aside, if you find yourself filtering and visualizing highly-dimensional datasets, you should consider checking out the parallel coordinates chart type.
 
 ## 現在の限界
 
-**(TBA)**
+There are a few limitations in graph interactions right now.
 
+Clicking points does not accumulate: you cannot accumulate the number of points that you have clicked on nor is there the concept of "unselecting" a point. This issue is being worked on in https://github.com/plotly/plotly.js/issues/1848.  
+
+It is not currently possible to customize the style of the hover interactions or the select box. This issue is being worked on in https://github.com/plotly/plotly.js/issues/1847.  
+
+There's a lot that you can do with these interactive plotting features. If you need help exploring your use case, open up a thread in the Dash Community Forum.  
+
+The final chapter of the Dash tutorial explains one last concept of dash: Callbacks with dash.dependencies.State. State is useful for UIs that contain forms or buttons.  
 
 [Dash Tutorial Part 4. Callbacks With State](./dash_tutorial_jap_chap5.md)
