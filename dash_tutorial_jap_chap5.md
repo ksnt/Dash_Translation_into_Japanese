@@ -92,7 +92,7 @@ def update_output_1(value):
 次の3つの例はこれらのアプローチを示す例となっています。
 
 
-## 例1 - 隠されたDiv要素ないにデータを貯める
+## 例1 - 隠されたDiv要素内にデータを格納する
 
 To save data in user's browser's session:  
 
