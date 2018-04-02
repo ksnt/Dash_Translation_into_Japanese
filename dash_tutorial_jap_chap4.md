@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
 ```
 
-![](./newplot_1_chap4.png) 
+![](./newplot1_chap4.png) 
 
 
 ## ホバー中のグラフのアップデート
@@ -298,7 +298,7 @@ if __name__ == '__main__':
     app.run_server()
 ```
 
-![](./newplot_2_chap4.png) 
+![](./newplot2_chap4.png) 
 
 Try mousing over the points in the scatter plot on the left. Notice how the line graphs on the right update based off of the point that you are hovering over.
 
@@ -463,6 +463,9 @@ app.callback(
 if __name__ == '__main__':
     app.run_server(debug=True)
 ```
+
+![](./newplot3_chap4.png) 
+
 
 **(TBA)**
 
