@@ -233,7 +233,7 @@ Here’s what this example looks like. Some things to note:
 
 - Similarly, reloading the page or opening the app in a new window is also fast because the initial state and the initial expensive computation has already been computed.  
 
-![](./plot1_chap5) 
+![](./plot1_chap5.gif) 
 
 以下にコードを示します。
 
