@@ -94,8 +94,17 @@ def update_output_1(value):
 
 ## 例1 - 隠されたDiv要素ないにデータを貯める
 
-**(TBA)**
+To save data in user's browser's session:  
 
+Implemented by saving the data as part of Dash's front-end store through methods explained in https://community.plot.ly/t/sharing-a-dataframe-between-plots/6173  
+- Data has to be converted to a string like JSON for storage and transport  
+- Data that is cached in this way will only be available in the user's current session.  
+        If you open up a new browser, the app's callbacks will always compute the data. The data is only cached and transported between callbacks within the session.  
+        As such, unlike with caching, this method doesn't increase the memory footprint of the app.  
+        There could be a cost in network transport. If your sharing 10MB of data between callbacks, then that data will be transported over the network between each callback.  
+        If the network cost is too high, then compute the aggregations upfront and transport those. Your app likely won't be displaying 10MB of data, it will just be displaying a subset or an aggregation of it.  
+
+This example outlines how you can perform an expensive data processing step in one callback, serialize the output at JSON, and provide it as an input to the other callbacks. This example uses standard dash callbacks and stores the JSON-ified data inside a hidden div in the app.  
 ```python
 
 global_df = pd.read_csv('...')
@@ -135,10 +144,13 @@ def update_table(jsonified_cleaned_data):
 
 ```
 
-## 例2
+## 例2 - Computing Aggregations Upfront
 
-**(TBA)**
+Sending the computed data over the network can be expensive if the data is large. In some cases, serializing this data and JSON can also be expensive.  
 
+In many cases, your app will only display a subset or an aggregation of the computed or filtered data. In these cases, you could precompute your aggregations in your data processing callback and transport these aggregations to the remaining callbacks.  
+
+Here's a simple example of how you might transport filtered or aggregated data to multiple callbacks. 
 ```python
 @app.callback(
     Output('intermediate-value', 'children'),
@@ -193,8 +205,33 @@ def update_graph_3(jsonified_cleaned_data):
 
 ## 例3 - キャッシングとシグナリング(Caching and Signaling)
 
-**(TBA)**
+This example:
 
+- Uses Redis via Flask-Cache for storing “global variables”. This data is accessed through a function who’s output is cached and keyed by its input arguments.
+
+- Uses the hidden div solution to send a signal to the other callbacks when the expensive computation is complete  
+
+- Note that instead of Redis, you could also save this to the file system. See https://flask-caching.readthedocs.io/en/latest/ for more details.  
+
+- This “signaling” is cool because it allows the expensive computation to only take up one process. Without this type of signaling, each callback could end up computing the expensive computation in parallel, locking 4 processes instead of 1.
+
+This approach also has the advantage that future sessions use the pre-computed value. This will work well for apps that have a small number of inputs.
+
+Here’s what this example looks like. Some things to note:  
+
+- I’ve simulated an expensive process by using a time.sleep(5).  
+
+- When the app loads, it takes 5 seconds to render all 4 graphs  
+
+- The initial computation only blocks 1 process  
+
+- Once the computation is complete, the signal is sent and 4 callbacks are executed in parallel to render the graphs. Each of these callbacks retrieves the data from the “global store”: the redis cache.  
+
+- I’ve set processes=6 in app.run_server so that multiple callbacks can be executed in parallel. In production, this is done with something like $ gunicorn --workers 6 --threads 2 app:server  
+
+- Selecting a value in the dropdown will take less than 5 seconds if it has already been selected in the past. This is because the value is being pulled from the cache.  
+
+- Similarly, reloading the page or opening the app in a new window is also fast because the initial state and the initial expensive computation has already been computed.  
 
 ![](./plot1_chap5) 
 
