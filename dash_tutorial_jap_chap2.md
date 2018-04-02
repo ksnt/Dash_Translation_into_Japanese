@@ -37,6 +37,8 @@ def update_output_div(input_value):
 if __name__ == '__main__':
     app.run_server()
 ```
+![](./newplot1_chap2.png)
+
 (訳者注:上記のコードを実行してlocalhost:8050を訪れるとテキストボックスが表示されることを確認できるはずです)
 
 テキストボックスに何かタイプしてみてください。出力コンポーネントの子(children)はただちに更新されます。ここで起こっていることを分解してみましょう：
@@ -122,7 +124,7 @@ def update_figure(selected_year):
 if __name__ == '__main__':
     app.run_server()
 ```
-![](./newplot1_chap2)
+![](./newplot2_chap2.png)
 
 **(TBA)**
 
@@ -235,7 +237,7 @@ if __name__ == '__main__':
     app.run_server()
 ```
 
-![](./newplot2_chap2)
+![](./newplot3_chap2.png)
 
 
 **(TBA)**
@@ -287,7 +289,7 @@ if __name__ == '__main__':
     app.run_server()
 ```
 
-![](./newplot3_chap2)
+![](./newplot4_chap2.png)
 
 **(TBA)**
 
