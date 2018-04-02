@@ -126,11 +126,21 @@ if __name__ == '__main__':
 ```
 ![](./newplot2_chap2.png)
 
-**(TBA)**
+(訳者注:上記のコードを実行してlocalhost:8050を訪れると上のような対話可能なグラフが表示されることを確認できるはずです)
 
+In this example, the "value" property of the Slider is the input of the app and the output of the app is the "figure" property of the Graph. Whenever the value of the Slider changes, Dash calls the callback function update_figure with the new value. The function filters the dataframe with this new value, constructs a figure object, and returns it to the Dash application.
+
+There are a few nice patterns in this example:　　
+
+1. We're using the Pandas library for importing and filtering datasets in memory.　　
+2. We load our dataframe at the start of the app: df = pd.read_csv('...'). This dataframe df is in the global state of the app and can be read inside the callback functions.  
+3. Loading data into memory can be expensive. By loading querying data at the start of the app instead of inside the callback functions, we ensure that this operation is only done when the app server starts. When a user visits the app or interacts with the app, that data (the df) is already in memory. If possible, expensive initialization (like downloading or querying data) should be done in the global scope of the app instead of within the callback functions.  
+4.The callback does not modify the original data, it just creates copies of the dataframe by filtered through pandas filters. This is important: your callbacks should never mutate variables outside of their scope. If your callbacks modify global state, then one user's session might affect the next user's session and when the app is deployed on multiple processes or threads, those modifications will not be shared across sessions.  
+    
 ### 複数入力
 
-**(TBA)**
+In Dash any "Output" can have multiple "Input" components. Here's a simple example that binds 5 Inputs (the value property of 2 Dropdown components, 2 RadioItems components, and 1 Slider component) to 1 Output component (the figure property of the Graph component). Notice how the app.callback lists all 5 dash.dependencies.Input inside a list in the second argument.
+
 
 ```python
 import dash
@@ -240,11 +250,18 @@ if __name__ == '__main__':
 ![](./newplot3_chap2.png)
 
 
-**(TBA)**
+In this example, the update_graph function gets called whenever the value property of the Dropdown, Slider, or RadioItems components change.  
+
+The input arguments of the update_graph function are the new or current value of the each of the Input properties, in the order that they were specified.  
+
+Even though only a single Input changes at a time (a user can only change the value of a single Dropdown in a given moment), Dash collects the current state of all of the specified Input properties and passes them into your function for you. Your callback functions are always guaranteed to be passed the representative state of the app.  
+
+Let's extend our example to include multiple outputs.  
 
 ### 複数出力
 
-**(TBA)**
+Each Dash callback function can only update a single Output property. To update multiple Outputs, just write multiple functions.
+
 
 ```python
 import dash
@@ -291,7 +308,9 @@ if __name__ == '__main__':
 
 ![](./newplot4_chap2.png)
 
-**(TBA)**
+You can also chain outputs and inputs together: the output of one callback function could be the input of another callback function.  
+
+This pattern can be used to create dynamic UIs where one input component updates the available options of the next input component. Here's a simple example.  
 
 ```python
 # -*- coding: utf-8 -*-
@@ -350,7 +369,11 @@ def set_display_children(selected_country, selected_city):
 if __name__ == '__main__':
     app.run_server(debug=True)
 ```
-**(TBA)**
+The first callback updates the available options in the second RadioItems component based off of the selected value in the first RadioItems component.  
+
+The second callback sets an initial value when the options property changes: it sets it to the first value in that options array.  
+
+The final callback displays the selected value of each component. If you change the value of the countries RadioItems component, Dash will wait until the value of the cities component is updated before calling the final callback. This prevents your callbacks from being called with inconsistent state like with "USA" and "Montréal".  
 
 ## まとめ
 
