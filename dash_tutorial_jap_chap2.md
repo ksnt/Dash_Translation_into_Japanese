@@ -142,8 +142,7 @@ if __name__ == '__main__':
     
 ### 複数入力
 
-In Dash any "Output" can have multiple "Input" components. Here's a simple example that binds 5 Inputs (the value property of 2 Dropdown components, 2 RadioItems components, and 1 Slider component) to 1 Output component (the figure property of the Graph component). Notice how the app.callback lists all 5 dash.dependencies.Input inside a list in the second argument.
-
+Dashではすべての"`Output`"は複数の"`Input`"コンポーネントをもつことができます。ここでは5つの`Input`(2つの`Dropdown`コンポーネントの`value`属性、2つの`RadioItems`コンポーネント、そして1つの`Slider`コンポーネント)を1つの`Output`コンポーネント(`Graph`コンポーネントの`figure`属性)にバインドする単純な例を見てみましょう。`app.callback`がどのようにして２つめの引数のリスト内で5つの`dash.dependencies.Input`を並べているのかということに注目してください。
 
 ```python
 import dash
@@ -252,14 +251,13 @@ if __name__ == '__main__':
 
 ![](./newplot3_chap2.png)
 
+この例では、`Dropdown`、`Slider`、`RadioItems`それぞれのコンポーネントの`value`属性が変化するときはいつでも`update_graph`関数が呼ばれます。  
 
-In this example, the update_graph function gets called whenever the value property of the Dropdown, Slider, or RadioItems components change.  
+`update_graph`関数の入力引数は、それらが特定された順に、各`Input`属性の新しい値あるいは現在の値となります。  
 
-The input arguments of the update_graph function are the new or current value of the each of the Input properties, in the order that they were specified.  
+たとえ単一の`Input`が一度に変化したとしても(ひとりのユーザーはある瞬間にはひとつのDropdownの値を変えることしかできません)、Dashは特定されたすべての`Input`属性の現在の状態をあつめてそれらをあなたのためのあなたの関数に渡します。あなたの書いたコールバック関数はつねにアプリケーションの代表的な状態に渡されることが保証されるのです。
 
-Even though only a single Input changes at a time (a user can only change the value of a single Dropdown in a given moment), Dash collects the current state of all of the specified Input properties and passes them into your function for you. Your callback functions are always guaranteed to be passed the representative state of the app.  
-
-Let's extend our example to include multiple outputs.  
+さあ、複数の出力を含んだ例に拡張しましょう。  
 
 ### 複数出力
 
