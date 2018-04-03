@@ -91,17 +91,25 @@ def update_output_1(value):
 
 ## 例1 - 隠されたDiv要素内にデータを格納する
 
-To save data in user's browser's session:  
 
-Implemented by saving the data as part of Dash's front-end store through methods explained in https://community.plot.ly/t/sharing-a-dataframe-between-plots/6173  
-- Data has to be converted to a string like JSON for storage and transport  
-- Data that is cached in this way will only be available in the user's current session.  
-        If you open up a new browser, the app's callbacks will always compute the data. The data is only cached and transported between callbacks within the session.  
-        As such, unlike with caching, this method doesn't increase the memory footprint of the app.  
-        There could be a cost in network transport. If your sharing 10MB of data between callbacks, then that data will be transported over the network between each callback.  
-        If the network cost is too high, then compute the aggregations upfront and transport those. Your app likely won't be displaying 10MB of data, it will just be displaying a subset or an aggregation of it.  
+データをユーザーのブラウザのセッション内に保存する:  
 
-This example outlines how you can perform an expensive data processing step in one callback, serialize the output at JSON, and provide it as an input to the other callbacks. This example uses standard dash callbacks and stores the JSON-ified data inside a hidden div in the app.  
+- https://community.plot.ly/t/sharing-a-dataframe-between-plots/6173 で説明されている方法でDashのフロントエンドストア(front-end store)の部分としてデータを保存することで実装される  
+
+- データは保存と移行のためJSONのような文字列に変換されなければいけない  
+
+- この方法でキャッシュされるデータはユーザーの現在のセッションないでのみ利用できる
+
+>　もしあたらしいブラウザで開いたら、アプリケーションのコールバックはつねにデータを計算する(compute)でしょう。データはそのセッションの範囲内のコールバック間でのみキャッシュされ移送されることになります。
+
+> それ自体は、キャッシングをともなったものとは異なり、この方法はアプリケーションのメモリの足跡を増やすことはありません。  
+
+> ネットワーク移送におけるコストはあるでしょう。もしコールバック間で10MBのデータを共有するのであれば、そのデータは各コールバック間でネットワークを越えて移送されるでしょう。
+
+> もしネットワークコストが高すぎるのであれば、前もって全体(のコスト)を計算してそれらを移送してください。アプリケーションはおそらく10MBのデータを表示せず、その全体の一部を表示するだけでしょう。 
+
+この例はいかにして一つのコールバック内で負荷の高いデータ処理のステップをやり遂げ、出力をJSONに変換し、それを他のオールバックへ入力として与えることができるかということを示しています。この例では標準的なDashのコールバックを使い、アプリケーション内の隠されたdiv要素内にJSON化されたデータを格納しています。
+
 ```python
 
 global_df = pd.read_csv('...')
@@ -141,7 +149,7 @@ def update_table(jsonified_cleaned_data):
 
 ```
 
-## 例2 - Computing Aggregations Upfront
+## 例2 - 前もって全体を計算する
 
 Sending the computed data over the network can be expensive if the data is large. In some cases, serializing this data and JSON can also be expensive.  
 
