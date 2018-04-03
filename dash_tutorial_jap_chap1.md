@@ -67,8 +67,8 @@ $python app.py
 1.`layout`は`html.Div`や`dcc.Graph`のように"components"の木で構成されています。  
 2.`dash_html_components`ライブラリはすべてのHTMLタグのためのコンポーネントをもっています。`html.H1(children='Hello Dash')`コンポーネントは`<h1>Hello Dash</h1>`というHTML要素をあなたのアプリケーション中に生成します。  
 3.すべてのコンポーネントが純粋なHTMLというわけではありません。`dash_core_components`は高階のコンポーネントですが対話的でありReact.jsライブラリを通じてJavaScript,HTML,CSSとともに生成されます。  
-4.各々のコンポーネントはキーワードプロパティを通じて宣言されます。Dashは宣言型ですので、主にこうしたプロパティを通じてあなたのアプリケーションを宣言することになります。  
-5.`children`プロパティは特別です。規定によりそのプロパティは常に、それを省略することができるということを意味での第一プロパティです。例えば`html.H1(children='Hello Dash')`は`html.H1('Hello Dash')`と同様です。また、文字列、数字、単一コンポーネント、コンポーネントのリストを含めることができます。  
+4.各々のコンポーネントはキーワード属性を通じて宣言されます。Dashは宣言型ですので、主にこうした属性を通じてあなたのアプリケーションを宣言することになります。  
+5.`children`プロパティは特別です。規定により、それを省略することができるということを意味での第一属性です。例えば`html.H1(children='Hello Dash')`は`html.H1('Hello Dash')`と同様です。また、文字列、数字、単一コンポーネント、コンポーネントのリストを含めることができます。  
 6.あなたのアプリケーション中のフォントはここで表示されているものとはやや見え方が異なることでしょう。このアプリケーションはカスタマイズされたCSSスタイルシートをも用いています。これは要素のデフォルトのスタイルを修正するためのものです。より多くのことは`css tutorial`で学ぶことができますが、ここでは次の行をあなたのファイルに付け加えてみることにします。  
 
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
@@ -138,14 +138,14 @@ if __name__ == '__main__':
 
 `html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDFF'})`はDashアプリケーションの中では`<h1 style="text-align: center; color: #7FDFF">Hello Dash</h1>`としてレンダリングされます。  
 
-`dash_html_components`とHTMLプロパティの間にはいくつかの重要な違いがあります。  
+`dash_html_components`とHTML属性の間にはいくつかの重要な違いがあります。  
 
 1.HTMLにおける`style`プロパティはセミコロンで分けられる文字列です。Dashの中ではディクショナリを与えればよいだけです。  
 2.`style`ディクショナリにおけるキーはキャメルケースになっています。したがって、`text-align`の代わりにtextAlignが用いられます。  
-3.HTMLの`class`プロパティはDashでは`className`となります。  
+3.HTMLの`class`属性はDashでは`className`となります。  
 4.HTMLタグの子供は`children`キーワード引数を通じて特定されます。規定より、これは常に第１引数でありしばしば省かれます。  
 
-これらに加えてさらに、手に入るHTMLプロパティとタグの全てはあなたのPythonコンテキストの範囲内で使うことができます。  
+これらに加えてさらに、手に入るHTML属性とタグの全てはあなたのPythonコンテキストの範囲内で使うことができます。  
 
 
 ### 再利用可能なコンポーネント
@@ -401,7 +401,7 @@ class Dropdown(dash.development.base_component.Component)
 
 ### まとめ
 
-Dashアプリケーションのlayoutはアプリケーションの見え方を記述してくれます。`layout`はコンポーネントの階層における木の一つです。`dash_html_components`ライブラリはHTMLタグ全てを提供するクラスを持っています。また、キーワード引数は`style`や`className`、`id`といったHTMLプロパティを指定するために使われます。`dash_core_components`ライブラリは制御やグラフのような高階コンポーネントを生成します。
+Dashアプリケーションのlayoutはアプリケーションの見え方を記述してくれます。`layout`はコンポーネントの階層における木の一つです。`dash_html_components`ライブラリはHTMLタグ全てを提供するクラスを持っています。また、キーワード引数は`style`や`className`、`id`といったHTML属性を指定するために使われます。`dash_core_components`ライブラリは制御やグラフのような高階コンポーネントを生成します。
 
 下記を参考として見てみてください：
 
