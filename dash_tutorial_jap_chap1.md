@@ -134,18 +134,18 @@ if __name__ == '__main__':
 ![](./newplot2.png) 
 
 
-この例のなかでわれわれは`style`属性とともに`html.Div`コンポーネントおよび`html.H1`コンポーネントのインラインスタイルを修正しました。
+この例のなかでわれわれは`style`プロパティとともに`html.Div`コンポーネントおよび`html.H1`コンポーネントのインラインスタイルを修正しました。
 
 `html.H1('Hello Dash', style={'textAlign': 'center', 'color': '#7FDFF'})`はDashアプリケーションの中では`<h1 style="text-align: center; color: #7FDFF">Hello Dash</h1>`としてレンダリングされます。  
 
-`dash_html_components`とHTML属性の間にはいくつかの重要な違いがあります。  
+`dash_html_components`とHTMLプロパティの間にはいくつかの重要な違いがあります。  
 
-1.HTMLにおける`style`属性はセミコロンで分けられる文字列です。Dashの中ではディクショナリを与えればよいだけです。  
+1.HTMLにおける`style`プロパティはセミコロンで分けられる文字列です。Dashの中ではディクショナリを与えればよいだけです。  
 2.`style`ディクショナリにおけるキーはキャメルケースになっています。したがって、`text-align`の代わりにtextAlignが用いられます。  
-3.HTMLの`class`属性はDashでは`className`となります。  
+3.HTMLの`class`プロパティはDashでは`className`となります。  
 4.HTMLタグの子供は`children`キーワード引数を通じて特定されます。規定より、これは常に第１引数でありしばしば省かれます。  
 
-これらに加えてさらに、手に入るHTML属性とタグの全てはあなたのPythonコンテキストの範囲内で使うことができます。  
+これらに加えてさらに、手に入るHTMLプロパティとタグの全てはあなたのPythonコンテキストの範囲内で使うことができます。  
 
 
 ### 再利用可能なコンポーネント
@@ -401,7 +401,7 @@ class Dropdown(dash.development.base_component.Component)
 
 ### まとめ
 
-Dashアプリケーションのlayoutはアプリケーションの見え方を記述してくれます。`layout`はコンポーネントの階層における木の一つです。`dash_html_components`ライブラリはHTMLタグ全てを提供するクラスを持っています。また、キーワード引数は`style`や`className`、`id`といったHTML属性を指定するために使われます。`dash_core_components`ライブラリは制御やグラフのような高階コンポーネントを生成します。
+Dashアプリケーションのlayoutはアプリケーションの見え方を記述してくれます。`layout`はコンポーネントの階層における木の一つです。`dash_html_components`ライブラリはHTMLタグ全てを提供するクラスを持っています。また、キーワード引数は`style`や`className`、`id`といったHTMLプロパティを指定するために使われます。`dash_core_components`ライブラリは制御やグラフのような高階コンポーネントを生成します。
 
 下記を参考として見てみてください：
 
