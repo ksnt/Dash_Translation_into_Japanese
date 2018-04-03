@@ -132,10 +132,13 @@ if __name__ == '__main__':
 
 この例の中にはいくつかのすばらしいパターンが含まれています： 
 
-1. We're using the Pandas library for importing and filtering datasets in memory.　　
-2. We load our dataframe at the start of the app: df = pd.read_csv('...'). This dataframe df is in the global state of the app and can be read inside the callback functions.  
-3. Loading data into memory can be expensive. By loading querying data at the start of the app instead of inside the callback functions, we ensure that this operation is only done when the app server starts. When a user visits the app or interacts with the app, that data (the df) is already in memory. If possible, expensive initialization (like downloading or querying data) should be done in the global scope of the app instead of within the callback functions.  
-4.The callback does not modify the original data, it just creates copies of the dataframe by filtered through pandas filters. This is important: your callbacks should never mutate variables outside of their scope. If your callbacks modify global state, then one user's session might affect the next user's session and when the app is deployed on multiple processes or threads, those modifications will not be shared across sessions.  
+1. メモリ上でデータセットをインポートしてフィルタリングするために`Pandas`ライブラリを使っています  
+
+2. アプリケーションのはじめの方でデータフレームをロードしています： `df = pd.read_csv('...')`。このデータフレーム`df`はアプリケーション内でグローバルな状態にありコールバック関数内で読み出すことができます。  
+
+3. データをメモリにロードするのはコストがかかります。コールバック関数内ではなくアプリケーションのはじめの部分でデータのクエリをロードすることにより、この操作がアプリケーションサーバーが起動するときにようやく行われるということが保証されます。ユーザーがアプリケーションを訪れたりアプリケーションとやりとりをするとき、そのデータ(`df`)はすでにメモリ上に存在するのです。もし可能であれば、コストのかかる初期化(例えばダウンロードやデータのクエリのようなもの)はコールバック関数内ではなくアプリケーションのグローバルスコープ内でなされるべきです。  
+
+4. コールバックはオリジナルデータを修正することはありません。pandasのfiltersを通して抽出されることでデータフレームのコピーが作られるだけです。これは重要なことです：あなたが書いたコールバックは決してスコープ外の変数を変化させるべきではないのです。もしあなたの書いたコールバックがグローバルな状態を修正したら、あるユーザーのセッションが別のユーザーのセッションに影響を与えてしまうかもしれません。また、アプリケーションが複数のプロセスやスレッド上でデプロイされるとき、そうした修正はセッションを越えて共有されることはないでしょう。  
     
 ### 複数入力
 
