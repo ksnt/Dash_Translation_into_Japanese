@@ -128,9 +128,9 @@ if __name__ == '__main__':
 
 (訳者注:上記のコードを実行してlocalhost:8050を訪れると上のような対話可能なグラフが表示されることを確認できるはずです)
 
-In this example, the "value" property of the Slider is the input of the app and the output of the app is the "figure" property of the Graph. Whenever the value of the Slider changes, Dash calls the callback function update_figure with the new value. The function filters the dataframe with this new value, constructs a figure object, and returns it to the Dash application.
+この例では、`Slider`の`"value"`属性がアプリケーションの入力で`Graph`の`"figure"`属性がアプリケーションの出力になっています。`Slider`の`value`が変わるときはいつDashは新しい値とともに`update_figure`というコールバック関数を呼び出します。この関数は新しい値を持ったデータフレームを抽出し、`figure`オブジェクトをつくり、それをDashアプリケーションに返します。  
 
-There are a few nice patterns in this example:　　
+この例の中にはいくつかのすばらしいパターンが含まれています： 
 
 1. We're using the Pandas library for importing and filtering datasets in memory.　　
 2. We load our dataframe at the start of the app: df = pd.read_csv('...'). This dataframe df is in the global state of the app and can be read inside the callback functions.  
