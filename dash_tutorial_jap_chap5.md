@@ -151,11 +151,12 @@ def update_table(jsonified_cleaned_data):
 
 ## 例2 - 前もって全体を計算する
 
-Sending the computed data over the network can be expensive if the data is large. In some cases, serializing this data and JSON can also be expensive.  
+ネットワーク越しに計算されたデータを送るのは、もしそのデータが大きければ大きなコストがかかります。いくつかのケースでは、このデータをJSONに変換することもまたコストがかかってしまいます。  
 
-In many cases, your app will only display a subset or an aggregation of the computed or filtered data. In these cases, you could precompute your aggregations in your data processing callback and transport these aggregations to the remaining callbacks.  
+多くの場合、アプリケーションはすでに計算されて抽出されたデータの集合体(aggregation)の部分集合を表示するだけでしょう。これらのケースでは、前もってデータ処理を行うコールバック内でその集合体(aggregations)を計算することができるでしょうし、また、これらの集合体(aggregations)を残りのコールバックに送ることもできるでしょう。  
 
-Here's a simple example of how you might transport filtered or aggregated data to multiple callbacks. 
+ここではどのようにして抽出されて凝集されたデータを複数のコールバックに送るかということの簡単な例を見てみましょう。
+
 ```python
 @app.callback(
     Output('intermediate-value', 'children'),
