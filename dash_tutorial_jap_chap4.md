@@ -137,7 +137,7 @@ if __name__ == '__main__':
 
 ## ホバー中のグラフのアップデート
 
-Let's update our world indicators example from the previous chapter by updating time series when we hover over points in our scatter plot. 
+では、散布図内の点の上にカーソルを乗せたとき(hoverしたとき)に時系列を更新することで、前章での世界表示版の例をアップデートしてみましょう。  
 
 ```python
 import dash
@@ -473,9 +473,9 @@ if __name__ == '__main__':
 
 ![](./newplot3_chap4.png) 
 
-Try clicking and dragging in any of the plots to filter different regions. On every selection, the three graph callbacks are fired with the latest selected regions of each plot. A pandas dataframe is filtered based off of the selected points and the graphs are replotted with the selected points highlighted and the selected region drawn as a dashed rectangle.
+さまざまな領域をフィルタリングするために適当な点が含まれた範囲をクリックおよびドラッグしてみてください。どこを選んだとしても、3つのグラフのコールバックは各々のプロットのもっとも最近選択された領域とともに呼び出されます。Pandasデータフレームは選択された点を元にフィルタリングされ、グラフはハイライトされている選択された点と破線の四角として描かれる選択範囲とともに再描画されます。  
 
-> As an aside, if you find yourself filtering and visualizing highly-dimensional datasets, you should consider checking out the parallel coordinates chart type.
+> 余談ではありますが、もし高次元のデータセットをフィルタリングおよび可視化するのであれば、並行座標(`parallel coordinates`)チャートタイプをチェックすることを一考すべできしょう。  
 
 ## 現在の限界
 
