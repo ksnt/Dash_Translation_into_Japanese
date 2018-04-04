@@ -2,7 +2,7 @@
 
 **最終更新日: April 4, 2018**
 
-Dashの英語チュートリアルを日本語に翻訳するプロジェクトです．  
+Plotly社が開発しているPythonフレームワークであるDashの英語チュートリアルを日本語に翻訳するプロジェクトです．  
 このリポジトリは公式ドキュメントにマージされることにより破棄される可能性があります．当面は一時的なリポジトリとなります．  
 
 📢このリポジトリに関する議論は以下のリンク先で行われています！
@@ -18,7 +18,7 @@ Dashの英語チュートリアルを日本語に翻訳するプロジェクト�
 
 ## [第2部 Dash レイアウト](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap1.md)
 
-Dashは`layout`を使ってあなたのアプリケーションの見え方を指定します。これは、一連の宣言的なDashコンポーネントによって構成されています。  
+Dashは`layout`を使ってあなたのアプリケーションの見え方を記述します。これは、一連の宣言的なDashコンポーネントによって構成されています。  
 
 
 ## [第3部 コールバックの基礎](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap2.md)  
@@ -37,7 +37,7 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 
 ## [第6部 コールバック間でのデータ共有](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap5.md)
 
-グローバル変数はあなたのDashアプリケーションを破壊してしまう危険があります。しかし心配はいりません。コールバック間でデータを共有するための他の方法が存在します。この章の知識は重いデータ処理タスクを実行させたいときや大きなデータを操作するコールバックを用いるときに役立つことになるでしょう。
+グローバル変数はあなたのDashアプリケーションを破壊してしまう危険があります。しかし心配はいりません。コールバック間でデータを共有するために他の方法が存在します。この章の知識は重いデータ処理タスクを実行させたいときや大きなデータを操作するコールバックを用いるときに役立つことになるでしょう。
 
 
 # 参考
@@ -47,7 +47,7 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 
 # Translation of Dash English tutorial into Japanese
 
-I am working on translation English Dash tutorial into Japanese one. 
+I am working on translation English Dash tutorial into Japanese one. Dash is a Python framework developed by Plotly.  
 This repository will be aborted when marged into official documents. This repository is temporary.    
 
 📢 Please see the link below if you want to see discussion on this repository!  
