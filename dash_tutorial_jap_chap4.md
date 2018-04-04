@@ -308,11 +308,12 @@ if __name__ == '__main__':
 
 ![](./newplot2_chap4.png) 
 
-Try mousing over the points in the scatter plot on the left. Notice how the line graphs on the right update based off of the point that you are hovering over.
+左の散布図内の天にマウスオーバーしてみてください。あなたが選択している点を元に右側のグラフがどのように更新されるか注意してみてください。  
 
-## Generic Crossfilter Recipe
+## 一般的なCrossfilterのレシピ
 
-Here's a slightly more generic example for crossfiltering across a six column data set. Each scatter plot's selection filters the underlying dataset.  
+ここでは6つのカラムをもつデータセットを横断したクロスフィルタリングのためのより一般的な例を少し見てみましょう。各々の散布図における選択は内在する(underlying)データセットをフィルタリングします。
+
 ```python
 import dash
 from dash.dependencies import Input, Output
@@ -479,14 +480,14 @@ if __name__ == '__main__':
 
 ## 現在の限界
 
-There are a few limitations in graph interactions right now.
+グラフとの対話には今いくつかの限界があります。  
 
-Clicking points does not accumulate: you cannot accumulate the number of points that you have clicked on nor is there the concept of "unselecting" a point. This issue is being worked on in https://github.com/plotly/plotly.js/issues/1848.  
+クリックした点は累積しません：クリックした点の数は記憶され加算されることはできませんし、点の"選択を外す(unselecting)"という概念もありません。この問題は以下のページで議論されています: https://github.com/plotly/plotly.js/issues/1848  
 
-It is not currently possible to customize the style of the hover interactions or the select box. This issue is being worked on in https://github.com/plotly/plotly.js/issues/1847.  
+現在のところホバーすることによる対話の実現および範囲を絞るためのセレクトボックスのスタイルをカスタマイズすることはできません。この問題は以下のページで議論されています: https://github.com/plotly/plotly.js/issues/1847  
 
-There's a lot that you can do with these interactive plotting features. If you need help exploring your use case, open up a thread in the Dash Community Forum.  
+こうした対話的なプロットの特徴をつかってできることはたくさんあります。自身のユースケースを探求したければDashのコミュニティフォーラム内でスレッドをたててください。  
 
-The final chapter of the Dash tutorial explains one last concept of dash: Callbacks with dash.dependencies.State. State is useful for UIs that contain forms or buttons.  
+Dashチュートリアルの最後の章ではDashの最後のコンセプトが説明されます： `dash.dependencies.State`をともなったコールバックです。`State`はフォームやボタンを含むUIにとって役に立ちます。  
 
 [Dash Tutorial Part 4. Callbacks With State](./dash_tutorial_jap_chap3.md)
