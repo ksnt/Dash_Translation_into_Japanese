@@ -209,7 +209,7 @@ def update_graph_3(jsonified_cleaned_data):
 ```
 
 
-## 例3 - キャッシングとシグナリング(Caching and Signaling)
+## 例3 - キャッシング(Caching)とシグナリング(Signaling)
 
 This example:
 
