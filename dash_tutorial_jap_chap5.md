@@ -211,33 +211,33 @@ def update_graph_3(jsonified_cleaned_data):
 
 ## 例3 - キャッシング(Caching)とシグナリング(Signaling)
 
-This example:
+この例では:
 
-- Uses Redis via Flask-Cache for storing “global variables”. This data is accessed through a function who’s output is cached and keyed by its input arguments.
+- "グローバル変数"を保存するためにFlask-Cacheを通してRedisを使っています。このデータはその出力がキャッシュされて入力引数によってうまく調整された(keyed)関数を通してアクセスされます。  
 
-- Uses the hidden div solution to send a signal to the other callbacks when the expensive computation is complete  
+- 負荷の高い計算が終わったときに他のコールバックにシグナルを送るために隠されたdivを使った方法を用います。  
 
-- Note that instead of Redis, you could also save this to the file system. See https://flask-caching.readthedocs.io/en/latest/ for more details.  
+- Redisの代わりにこれをファイルシステムに保存することもできます。詳しくはこちらを見てください: https://flask-caching.readthedocs.io/en/latest/  
 
-- This “signaling” is cool because it allows the expensive computation to only take up one process. Without this type of signaling, each callback could end up computing the expensive computation in parallel, locking 4 processes instead of 1.
+- この"シグナリング"は素晴らしいものです。なぜなら、一つのプロセスを使うことだけに高負荷な計算をさせることができるからです。この種のシグナリングなしでは、各々のコールバックが1つではなく4つのプロセスを専有して並行に高負荷な計算を行ってしまうことになってしまいます。  
 
-This approach also has the advantage that future sessions use the pre-computed value. This will work well for apps that have a small number of inputs.
+- このアプローチはまた将来のセッションが前もって計算された値を使うという利点ももっています。これは、少数の入力をもつアプリケーションではうまくいくでしょう。
 
-Here’s what this example looks like. Some things to note:  
+この例がどんな感じのものなのかということを示しましょう。注意すべき点がいくつかあります:  
 
-- I’ve simulated an expensive process by using a time.sleep(5).  
+- time.sleep(5)を使っって高負荷なプロセスをシミュレートしています。  
 
-- When the app loads, it takes 5 seconds to render all 4 graphs  
+- アプリケーションがロードされるとき、4つのグラフをレンダリングするために5秒かかっています。  
 
-- The initial computation only blocks 1 process  
+- 最初の計算は1つのプロセスをブロックするだけです。  
 
-- Once the computation is complete, the signal is sent and 4 callbacks are executed in parallel to render the graphs. Each of these callbacks retrieves the data from the “global store”: the redis cache.  
+- 一度計算が終わると、シグナルが送られ、4つのコールバックがグラフをレンダリングするために並行に実行されます。これらの各コールバックは"グローバルストア(global store)"からデータを読み出してきます： ここではRedisキャッシュです。  
 
-- I’ve set processes=6 in app.run_server so that multiple callbacks can be executed in parallel. In production, this is done with something like $ gunicorn --workers 6 --threads 2 app:server  
+- 複数のコールバックが並行に実行されるようにapp.run_server内でprocesses=6と設定しました。製品内では、これは$ gunicorn --workers 6 --threads 2 app:server のような形で設定されることになります。  
 
-- Selecting a value in the dropdown will take less than 5 seconds if it has already been selected in the past. This is because the value is being pulled from the cache.  
+- もし過去に選ばれたことがあれば、dropdownの値を選ぶことには5秒もかからないでしょう。これは、値がキャッシュからとってこられるからです。  
 
-- Similarly, reloading the page or opening the app in a new window is also fast because the initial state and the initial expensive computation has already been computed.  
+- 同様に、ページをロードしたり新しいウィンドウでアプリケーションを開くことも素早くおこなうことができます。なぜなら、初期状態や初期の高負荷な計算はすでに計算されてしまっているからです。
 
 ![](./plot1_chap5.gif) 
 
