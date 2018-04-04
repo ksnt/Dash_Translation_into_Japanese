@@ -1,15 +1,14 @@
 # 対話的な可視化
 
-The dash_core_components library includes a component called Graph.  
+`dash_core_components`ライブラリには`Graph`と呼ばれるコンポーネントが含まれています。  
 
-Graph renders interactive data visualizations using the open source plotly.js JavaScript graphing library. Plotly.js supports over 35 chart types and renders charts in both vector-quality SVG and high-performance WebGL.  
+`Graph`はオープンソースである`plotly.js`というJavaScriptのグラフライブラリを使って対話的なデータ可視化を実現にします。 Plotly.jsは35種類以上のチャートをサポートしておりベクター品質のSVGとハイパフォーマンスなWebGLの双方を用いてレンダリングを行います。  
 
-The figure argument in the dash_core_components.Graph component is the same figure argument that is used by plotly.py, Plotly's open source Python graphing library. Check out the plotly.py documentation and gallery to learn more.  
+`dash_core_components.Graph`コンポーネントの`figure`引数はPythonのオープンソースグラフライブラリである`plotly.py`で用いられている`figure`引数と同じです。より詳しく知るためには[plotly.py documentation and gallery](https://plot.ly/pythonをチェックしてください。  
 
-Dash components are described declaratively by a set of attributes. All of these attributes can be updated by callback functions but only a subset of these attributes are updated through user interaction. For example, when you click on an option in a dcc.Dropdown component, the value property of that component changes.  
+Dashコンポーネントは一連の属性(attributes)によって宣言的に記述されます。これらの属性は全てコールバック関数によって更新することができますが、これらの属性の一部のみがユーザーとのインタラクションを通じて更新されます。たとえば、`dcc.Dropdown`コンポーネント内の選択肢をクリックしたとき、そのコンポーネントの`value`属性が変化します。
 
-The dcc.Graph component has four attributes that can change through user-interaction: hoverData, clickData, selectedData, relayoutData. These properties update when you hover over points, click on points, or select regions of points in a graph.
-Here's an simple example that prints these attributes in the screen.   
+`dcc.Graph`コンポーネントはユーザーインタラクションを通じて変更することができる4つの属性をもっています：`hoverData`、`clickData`、`selectedData`、そして`relayoutData`の4つです。これらのプロパティは点の上にポインタを乗せた(hoverした)とき、あるいはグラフ内(の点)の範囲を選択したときに更新されます。ここではスクリーン内でこれらの属性をプリントする簡単な例を見てみましょう。
 
 ```python
 import json
