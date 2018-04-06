@@ -48,7 +48,7 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 # Translation of Dash English tutorial into Japanese
 
 I am working on translation English Dash tutorial into Japanese one. Dash is a Python framework developed by Plotly.  
-This repository will be aborted when marged into official documents. This repository is temporary.    
+This repository would be aborted when marged into official documents. This repository would be temporary.    
 
 📢 Please see the link below if you want to see discussion on this repository!  
 
