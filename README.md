@@ -42,7 +42,9 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 
 # 参考
 
-[公式ドキュメント](https://github.com/plotly/dash-docs)
+[公式ドキュメント](https://dash.plot.ly/)  
+
+[公式リポジトリ](https://github.com/plotly/dash)
 
 
 # Translation of Dash English tutorial into Japanese
@@ -59,4 +61,6 @@ Feel free to contact me here!
 
 # Reference
 
-[Original Documents](https://github.com/plotly/dash-docs)
+[Official Documents](https://dash.plot.ly/)  
+
+[Official Repository](https://github.com/plotly/dash)
