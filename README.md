@@ -57,33 +57,33 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 
 ## コンポーネントライブラリ
 
-[Dashコアコンポーネント]()  
+[Dashコアコンポーネント](https://dash.plot.ly/dash-core-components)  
 Dashコアコンポーネントライブラリにはスライダー、グラフ、ドロップダウン、テーブル、その他といった一連のより抽象度の高いコンポーネントが含まれています。
 
-[Dash HTMLコンポーネント]()  
+[Dash HTMLコンポーネント](https://dash.plot.ly/dash-html-components)  
 DashはユーザーフレンドリーなPythonクラスとして利用可能なHTMLタグの全てを提供しています。この賞ではこれがどのように機能しているのかということとDashのHTMLコンポーネントと標準的なHTMLの間にあるいくつかの重要な違いについて説明します。
 
-[Dash DAQコンポーネント]()
+[Dash DAQコンポーネント](https://www.dashdaq.io/)
 $840/開発者/年  
 データ活用ユーザーインターフェースのための美しいスタイルと特別なコンポーネント  
 
 ## 自作コンポーネントを作る
 
-[Python開発者のためのReact]()  
+[Python開発者のためのReact](https://dash.plot.ly/react-for-python-developers)  
 Python開発者のためのReactおよびJavaScriptチュートリアル  
 
-[自分でコンポーネントをつくる]()  
+[自分でコンポーネントをつくる](https://dash.plot.ly/plugins)  
 DashコンポーネントはReact.jsで作られています。DashはPythonで書かれたこれらのコンポーネントに対してDashに適合したインターフェースを生成するReactからDashへのツールチェーンを提供します。
 
 ## 発展的な内容
 
-[パフォーマンス]()  
+[パフォーマンス](https://dash.plot.ly/performance)  
 
-[逐次更新]()  
+[逐次更新](https://dash.plot.ly/live-updates)  
 
-[CSSとJSを追加してPage-Loadテンプレートをオーバーライドする]()  
+[CSSとJSを追加してPage-Loadテンプレートをオーバーライドする](https://dash.plot.ly/external-resources)  
 
-[URLルーティングとマルチプルアプリケーション]()  
+[URLルーティングとマルチプルアプリケーション](https://dash.plot.ly/urls)  
 
 
 ## 参考
