@@ -16,7 +16,7 @@ Plotly社が開発しているPythonフレームワークであるDashの英語�
 
 ## Dashって何？
 
-[はじめに]()   
+[はじめに](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/introcution.md)   
 Dashについてのちょっとした記事とすべての始まりだったPlotconでのトークへのリンク  
 
 [Announcement Essay](https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503)  
