@@ -12,35 +12,50 @@ Plotly社が開発しているPythonフレームワークであるDashの英語�
 ご協力いただける方歓迎です！  
 お気軽にご連絡ください！  
 
-# Dashチュートリアル  
+# Dashユーザーガイド（日本語版）
 
-## [第1部 インストール](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap0.md)
+## Dashって何？
 
-## [第2部 Dash レイアウト](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap1.md)
+[はじめに]()   
+Dashについてのちょっとした記事とすべての始まりだったPlotconでのトークへのリンク  
+
+[Announcement Essay](https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503)  
+Dashについての追加記事．Dashのアーキテクチャとプロジェクトの背後にあるモチベーションに関する議論  
+
+[Dashアプリケーションギャラリー](https://dash.plot.ly/gallery)  
+Dashを使って何ができるのかをちらっと一瞥  
+
+[Dashクラブ](https://plot.us12.list-manage.com/subscribe?u=28d7f8f0685d044fb51f0d4ee&id=0c1cb734d7)  
+Dashの作者chriddypからの隔週ニュースレター
+
+## Dashチュートリアル  
+
+[第1部 インストール](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap0.md)
+
+[第2部 Dash レイアウト](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap1.md)
 
 Dashは`layout`を使ってあなたのアプリケーションの見え方を記述します。これは、一連の宣言的なDashコンポーネントによって構成されています。  
 
-
-## [第3部 コールバックの基礎](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap2.md)  
+[第3部 コールバックの基礎](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap2.md)  
 
 DashアプリケーションはDashコールバック(Dash Callbacks)を通じて対話的な機能を実現しています。コールバック(`Callback`)というのは、入力コンポーネントの性質が変わったときにはいつも自動的に呼ばれるPythonの関数のことです。コールバックは複数のコールバックを連ねることが出来ます。また、一つのアプリケーションに閉じない複数のアップデートを引き起こすようなユーザーインターフェースにおいては、一度限りのアップデートを行います。
 
-## [第4部 状態(State)を持ったコールバック](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap3.md)
+[第4部 状態(State)を持ったコールバック](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap3.md)
 
 基本的なコールバックは値が変化したときにいつも呼びだされます。インプットが変わったときにはいつも追加の値を反映させるためにDash StateをDash Inputsと一緒に使ってください。  
 
 
-## [第5部 対話的なグラフ作成とクロスフィルタリング](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap4.md)
+[第5部 対話的なグラフ作成とクロスフィルタリング](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap4.md)
 
 あなたがカーソルを合わせたり（hover）、クリックしたり、チャート上の点を選んだときはいつでも対話的な操作が行えるように、Dashグラフコンポーネント(the Dash Graph component)を使いましょう。
 
 
-## [第6部 コールバック間でのデータ共有](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap5.md)
+[第6部 コールバック間でのデータ共有](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap5.md)
 
 グローバル変数はあなたのDashアプリケーションを破壊してしまう危険があります。しかし心配はいりません。コールバック間でデータを共有するために他の方法が存在します。この章の知識は重いデータ処理タスクを実行させたいときや大きなデータを操作するコールバックを用いるときに役立つことになるでしょう。
 
 
-# 参考
+### 参考
 
 [公式ドキュメント](https://github.com/plotly/dash-docs)
 
