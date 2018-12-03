@@ -50,6 +50,9 @@ DashアプリケーションはDashコールバック(Dash Callbacks)を通じ�
 [第6部 コールバック間でのデータ共有](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap5.md)  
 グローバル変数はあなたのDashアプリケーションを破壊してしまう危険があります。しかし心配はいりません。コールバック間でデータを共有するために他の方法が存在します。この章の知識は重いデータ処理タスクを実行させたいときや大きなデータを操作するコールバックを用いるときに役立つことになるでしょう。
 
+[第7部 FAQとGotcha](https://dash.plot.ly/faqs)  
+チュートリアルの他の部分を読み通したけれどまだ疑問があったり予期しない振る舞いに遭遇しているとしたらこの章が役に立つはずです。
+
 ## コンポーネントライブラリ
 
 [Dashコアコンポーネント](https://dash.plot.ly/dash-core-components)  
