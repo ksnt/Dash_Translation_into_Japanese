@@ -21,7 +21,7 @@ Plotly社が開発しているPythonフレームワークであるDashの英語�
 Dashについてのちょっとした記事とすべての始まりだったPlotconでのトークへのリンク  
 
 [Announcement Essay](https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503)  
-Dashについての追加記事．Dashのアーキテクチャとプロジェクトの背後にあるモチベーションに関する議論  
+Dashについての追加記事。Dashのアーキテクチャとプロジェクトの背後にあるモチベーションに関する議論  
 
 [Dashアプリケーションギャラリー](https://dash.plot.ly/gallery)  
 Dashを使って何ができるのかをちらっと一瞥  
@@ -37,7 +37,7 @@ Dashの作者chriddypからの隔週ニュースレター
 Dashは`layout`を使ってあなたのアプリケーションの見え方を記述します。これは、一連の宣言的なDashコンポーネントによって構成されています。  
 
 [第3部 コールバックの基礎](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap2.md)  
-DashアプリケーションはDashコールバック(Dash Callbacks)を通じて対話的な機能を実現しています。コールバック(`Callback`)というのは、入力コンポーネントの性質が変わったときにはいつも自動的に呼ばれるPythonの関数のことです。コールバックは複数のコールバックを連ねることが出来ます。また、1つのアプリケーションに閉じない複数のアップデートを引き起こすようなユーザーインターフェースにおいては、1度限りのアップデートを行います。
+DashアプリケーションはDashコールバック(Dash Callbacks)を通じて対話的な機能を実現しています。コールバック(`Callback`)というのは、入力コンポーネントの性質が変わったときには常に自動的に呼ばれるPythonの関数のことです。コールバックは複数のコールバックを連ねることが出来ます。また、1つのアプリケーションに閉じない複数のアップデートを引き起こすようなユーザーインターフェースにおいては、1度限りのアップデートを行います。
 
 [第4部 状態(State)を持ったコールバック](https://github.com/ksnt/Dash_Translation_into_Japanese/blob/master/dash_tutorial_jap_chap3.md)  
 基本的なコールバックは値が変化したときにいつも呼びだされます。インプットが変わったときにはいつも追加の値を反映させるためにDash StateをDash Inputsと一緒に使ってください。  
